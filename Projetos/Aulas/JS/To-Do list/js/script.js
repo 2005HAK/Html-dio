@@ -1,14 +1,30 @@
+const dado = document.getElementById("entradaDados");
+const erro = document.getElementById("error");
 
 
 function adicionar() {
-    var divAtual = document.getElementById("checkbox");
-    var divNova = document.createElement("div");
-    var checkbox = document.createElement("input")
-    checkbox.type = "checkbox";
-    let conteudo = document.getElementById("entradaDados");
-    checkbox.textContent = conteudo;
-    divNova.appendChild(checkbox);
 
+    if (dado["value"] == '') {
 
-    document.body.insertBefore(divNova, divAtual);
+        erro.style.visibility = "visible";
+        erro.style.color = "red";
+
+    } else {
+
+        erro.style.visibility = "hidden";
+        let divAtual = document.getElementById("checkbox");
+        let interna = document.createElement("div");
+        interna.className = "itens";
+        let entrada = document.createElement("input");
+        let texto = document.createElement("p");
+        entrada.type = "checkbox";
+
+        texto.innerText = dado["value"];
+        interna.appendChild(entrada);
+        interna.appendChild(texto);
+        divAtual.appendChild(interna);
+
+        dado["value"] = "";
+    }
+
 }

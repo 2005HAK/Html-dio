@@ -12,3 +12,24 @@ body {
     display: flex;
     flex-direction: row;
 }
+
+#checkbox {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.itens {
+    display: flex;
+    flex-direction: row;
+    border: 2px solid black;
+    margin-top: 5px;
+}
+
+#error {
+    visibility: hidden;
+}
+
+p {
+    margin: 0;
+}
